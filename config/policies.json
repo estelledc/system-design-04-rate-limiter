@@ -1,0 +1,22 @@
+[
+  {
+    "id": "standard",
+    "method": "GET",
+    "path": "/v1/resource",
+    "capacity": 10,
+    "refillTokens": 5,
+    "refillIntervalMs": 1000,
+    "cost": 1,
+    "failureMode": "closed"
+  },
+  {
+    "id": "expensive",
+    "method": "GET",
+    "path": "/v1/expensive",
+    "capacity": 2,
+    "refillTokens": 1,
+    "refillIntervalMs": 2000,
+    "cost": 1,
+    "failureMode": "closed"
+  }
+]

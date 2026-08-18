@@ -1,0 +1,40 @@
+{
+  "name": "system-design-04-rate-limiter",
+  "version": "0.1.0",
+  "description": "Evidence-bound token bucket rate limiter with deterministic local tests and a Redis atomic adapter",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "lint": "node scripts/check-syntax.mjs",
+    "repo:audit": "node scripts/repo-audit.mjs",
+    "test": "node --test --test-reporter=spec",
+    "test:unit": "node --test --test-reporter=spec test/unit/in-memory-store.test.js test/unit/policy.test.js test/unit/rate-limiter.test.js test/unit/redis-store.test.js test/http/server.test.js",
+    "test:integration": "node --test --test-reporter=spec test/integration/redis.test.js",
+    "smoke": "node scripts/runtime-smoke.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "audit": "npm audit --audit-level=high",
+    "check": "npm run lint && npm run repo:audit && npm test && npm run smoke && npm run benchmark && npm run audit"
+  },
+  "keywords": [
+    "system-design",
+    "rate-limiter",
+    "token-bucket",
+    "redis"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estelledc/system-design-04-rate-limiter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/estelledc/system-design-04-rate-limiter/issues"
+  },
+  "homepage": "https://github.com/estelledc/system-design-04-rate-limiter#readme",
+  "license": "MIT",
+  "dependencies": {
+    "redis": "6.2.1"
+  }
+}
