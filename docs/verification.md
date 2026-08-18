@@ -47,6 +47,22 @@ The benchmark prints its own elapsed time and environment on every run. This
 page intentionally does not freeze the observed decisions/second as a product
 claim.
 
+## First remote Redis receipt
+
+The implementation commit
+[`2b99ca2089c4fce99ed14f11d716ac9cfb027513`](https://github.com/estelledc/system-design-04-rate-limiter/commit/2b99ca2089c4fce99ed14f11d716ac9cfb027513)
+was verified by [GitHub Actions run 32145401570](https://github.com/estelledc/system-design-04-rate-limiter/actions/runs/32145401570)
+on 2026-08-18:
+
+- Node 22 + Redis 7.4: 24 passed, 0 skipped;
+- Node 24 + Redis 7.4: 24 passed, 0 skipped;
+- Node 26 + Redis 7.4: 24 passed, 0 skipped;
+- runtime smoke and dependency audit passed in all three jobs.
+
+This is evidence for the pinned Linux runner workflow and Redis container
+digest in that commit. It is not a Redis Cluster, failover, multi-region, load,
+deployment, or external-user receipt.
+
 ## Not proven
 
 - no production traffic, cross-host latency, Redis cluster, failover, replica,
