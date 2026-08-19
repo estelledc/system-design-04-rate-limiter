@@ -49,9 +49,10 @@ claim.
 
 ## First remote Redis receipt
 
-The implementation commit
-[`2b99ca2089c4fce99ed14f11d716ac9cfb027513`](https://github.com/estelledc/system-design-04-rate-limiter/commit/2b99ca2089c4fce99ed14f11d716ac9cfb027513)
-was verified by [GitHub Actions run 32145401570](https://github.com/estelledc/system-design-04-rate-limiter/actions/runs/32145401570)
+The implementation tree now lives at identity-safe commit
+[`e4eebbe595e72787c68cea59e89e13faf00461e4`](https://github.com/estelledc/system-design-04-rate-limiter/commit/e4eebbe595e72787c68cea59e89e13faf00461e4).
+The same tree was first verified before the author-metadata rewrite by
+[GitHub Actions run 32145401570](https://github.com/estelledc/system-design-04-rate-limiter/actions/runs/32145401570)
 on 2026-08-18:
 
 - Node 22 + Redis 7.4: 24 passed, 0 skipped;
@@ -62,6 +63,17 @@ on 2026-08-18:
 This is evidence for the pinned Linux runner workflow and Redis container
 digest in that commit. It is not a Redis Cluster, failover, multi-region, load,
 deployment, or external-user receipt.
+
+## Identity-safe main receipt
+
+On 2026-08-19, `main` was rewritten to use the repository's GitHub noreply
+identity. The rewrite preserved every existing commit tree, message, author
+date, and committer date; it changed only author and committer identity
+metadata. Rewritten baseline
+[`c4d1714d0ec102af2486a939d1af899bb7898a9a`](https://github.com/estelledc/system-design-04-rate-limiter/commit/c4d1714d0ec102af2486a939d1af899bb7898a9a)
+passed [GitHub Actions run 32223265455](https://github.com/estelledc/system-design-04-rate-limiter/actions/runs/32223265455)
+on Node 22, 24, and 26 with Redis 7.4. This receipt proves the active rewritten
+lineage; the earlier run remains a tree-equivalent historical receipt.
 
 ## Not proven
 
