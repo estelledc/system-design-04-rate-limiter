@@ -35,6 +35,6 @@
   "homepage": "https://github.com/estelledc/system-design-04-rate-limiter#readme",
   "license": "MIT",
   "dependencies": {
-    "redis": "6.2.1"
+    "redis": "6.3.0"
   }
 }
